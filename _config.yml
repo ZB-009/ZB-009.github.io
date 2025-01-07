@@ -1,0 +1,35 @@
+# Site settings
+title: Test
+description: A brief description of your site
+url: https://ZB-009.github.io
+baseurl: "/zayd"  
+
+# Author settings
+author:
+  name: Your Name
+  email: your-email@example.com
+
+# Social links (optional)
+social_links:
+  twitter: "https://twitter.com/your-profile"
+  github: "https://github.com/your-username"
+  linkedin: "https://linkedin.com/in/your-profile"
+
+# Build settings
+theme: jekyll-theme-cayman  # Specify the theme you want to use (optional)
+
+# Markdown settings
+markdown: kramdown  # Default markdown processor
+
+# Permalinks (optional)
+permalink: /:year/:month/:day/:title/
+
+# Plugins (optional, depending on your needs)
+plugins:
+  - jekyll-feed  # Adds an RSS feed
+  - jekyll-seo-tag  # Adds SEO metadata
+
+# Exclude specific files from being processed (optional)
+exclude:
+  - README.md
+  - LICENSE

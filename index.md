@@ -3,7 +3,6 @@
 
 ## Brainstorming
 1. 3-Bit Flashing Binary Adder
-    1. Idk yet
 2. Traffic Light
 
 ### Idea Chosen

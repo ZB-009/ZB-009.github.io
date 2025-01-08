@@ -1,34 +1,4 @@
-# Site settings
-title: Computer Tech Culminating 2024-2025
-description: A documentation of the work completed during my Technology Culminating during the 2024-2025 school year.
-url: https://ZB-009.github.io
-baseurl: "/zayd"  
-
-# Author settings
-author: 
-  name: Zayd
-  email: 818797@pdsb.net
-
-# Social links (optional)
-social_links:
-  github: "https://github.com/ZB-009"
-
-remote_theme: pages-themes/minimal@v0.2.0
-plugins:
-- jekyll-remote-theme # add this line to the plugins list if you already have one
-
-# Markdown settings
-markdown: kramdown  # Default markdown processor
-
-# Permalinks (optional)
-permalink: /:year/:month/:day/:title/
-
-# Plugins (optional, depending on your needs)
-plugins:
-  - jekyll-feed  # Adds an RSS feed
-  - jekyll-seo-tag  # Adds SEO metadata
-
-# Exclude specific files from being processed (optional)
-exclude:
-  - README.md
-  - LICENSE
+title: Computer Technology Culminating 2024-2025
+logo: /assets/img/logo.png
+description: Documentation of work completed during culminating project.
+theme: jekyll-theme-minimal

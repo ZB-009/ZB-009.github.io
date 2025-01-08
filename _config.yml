@@ -1,19 +1,17 @@
 # Site settings
-title: Test
-description: A brief description of your site
+title: Computer Tech Culminating 2024-2025
+description: A documentation of the work completed during my Technology Culminating during the 2024-2025 school year.
 url: https://ZB-009.github.io
 baseurl: "/zayd"  
 
 # Author settings
-author:
-  name: Your Name
-  email: your-email@example.com
+author: 
+  name: Zayd
+  email: 818797@pdsb.net
 
 # Social links (optional)
 social_links:
-  twitter: "https://twitter.com/your-profile"
-  github: "https://github.com/your-username"
-  linkedin: "https://linkedin.com/in/your-profile"
+  github: "https://github.com/ZB-009"
 
 # Build settings
 theme: jekyll-theme-cayman  # Specify the theme you want to use (optional)

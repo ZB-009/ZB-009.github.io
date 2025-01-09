@@ -7,14 +7,9 @@
 
     {% seo %}
     <link rel="stylesheet" href="{{ "/assets/css/style.css?v=" | append: site.github.build_revision | relative_url }}">
-    <!--[if lt IE 9]>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
-    <![endif]-->
     {% include head-custom.html %}
     
-    <!-- Dark Mode Styles -->
     <style>
-        /* Default Light Mode Styles */
         body {
             background-color: #ffffff;
             color: #000000;
@@ -55,7 +50,6 @@
             color: #000;
         }
 
-        /* Dark Mode Styles */
         body.dark-mode {
             background-color: #121212;
             color: white;
@@ -83,7 +77,6 @@
             color: #ccc;
         }
 
-        /* Button Styles */
         #dark-mode-toggle {
             background: none;
             border: none;
@@ -95,21 +88,18 @@
             z-index: 1000;
         }
 
-        /* Hide icons by default */
         #dark-mode-toggle span {
             display: none;
         }
 
-        /* Show light icon in dark mode */
         body.dark-mode #dark-mode-toggle span.light {
             display: inline;
+            color: white;
         }
 
-        /* Show dark icon in light mode */
         body:not(.dark-mode) #dark-mode-toggle span.dark {
             display: inline;
         }
-
     </style>
   </head>
   <body>
@@ -140,10 +130,9 @@
         {% endif %}
       </header>
       
-      <!-- Dark Mode Toggle Button -->
       <button id="dark-mode-toggle" aria-label="Toggle Dark Mode">
-        <span class="light">&#9728;</span> <!-- Light Mode Icon (Sun) -->
-        <span class="dark">&#9790;</span> <!-- Dark Mode Icon (Moon) -->
+        <span class="light">&#9728;</span>
+        <span class="dark">&#9790;</span>
       </button>
 
       <section>
@@ -160,22 +149,18 @@
 
     <script src="{{ "/assets/js/scale.fix.js" | relative_url }}"></script>
 
-    <!-- Dark Mode Toggle Script -->
     <script>
       document.addEventListener("DOMContentLoaded", function() {
         const toggleButton = document.getElementById("dark-mode-toggle");
         const body = document.body;
 
-        // Check if the user has a preferred mode saved in localStorage
         if (localStorage.getItem("dark-mode") === "true") {
           body.classList.add("dark-mode");
         }
 
-        // Add event listener for the toggle button
         toggleButton.addEventListener("click", function() {
           body.classList.toggle("dark-mode");
-          
-          // Save the user's preference in localStorage
+
           if (body.classList.contains("dark-mode")) {
             localStorage.setItem("dark-mode", "true");
           } else {

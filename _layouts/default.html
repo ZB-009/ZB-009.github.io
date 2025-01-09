@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="{{ site.lang | default: "en-US" }}">
   <head>
     <meta charset="UTF-8">
@@ -14,50 +14,99 @@
     
     <!-- Dark Mode Styles -->
     <style>
-        /* Dark Mode Styles */
+        /* Default Light Mode Styles */
         body {
-            background-color: #121212;
-            color: white;
+            background-color: #ffffff;
+            color: #000000;
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
+            transition: background-color 0.3s, color 0.3s;
         }
 
         h1, h2, h3, p {
-            color: white;
+            color: #000000;
         }
 
         header {
             padding: 20px;
-            background-color: #1e1e1e;
-            border-bottom: 2px solid #333;
+            background-color: #f4f4f4;
+            border-bottom: 2px solid #ddd;
         }
 
         header a {
-            color: white;
+            color: #000000;
             text-decoration: none;
         }
 
         footer {
-            background-color: #1e1e1e;
+            background-color: #f4f4f4;
             padding: 10px;
             text-align: center;
-            color: #ccc;
+            color: #555;
         }
 
         footer a {
-            color: #ccc;
+            color: #555;
             text-decoration: none;
         }
 
         .downloads a {
-            color: #ddd;
+            color: #000;
         }
 
-        /* Additional dark styling for links, headings, etc. */
-        a:hover {
-            color: #00bcd4;
+        /* Dark Mode Styles */
+        body.dark-mode {
+            background-color: #121212;
+            color: white;
         }
+
+        body.dark-mode h1, body.dark-mode h2, body.dark-mode h3, body.dark-mode p {
+            color: white;
+        }
+
+        body.dark-mode header {
+            background-color: #1e1e1e;
+            border-bottom: 2px solid #333;
+        }
+
+        body.dark-mode header a {
+            color: white;
+        }
+
+        body.dark-mode footer {
+            background-color: #1e1e1e;
+            color: #ccc;
+        }
+
+        body.dark-mode footer a {
+            color: #ccc;
+        }
+
+        /* Button Styles */
+        #dark-mode-toggle {
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+        }
+
+        #dark-mode-toggle span {
+            display: none;
+        }
+
+        body.dark-mode #dark-mode-toggle span.dark {
+            display: inline;
+        }
+
+        body:not(.dark-mode) #dark-mode-toggle span.light {
+            display: inline;
+        }
+
     </style>
   </head>
   <body>
@@ -87,9 +136,17 @@
         </ul>
         {% endif %}
       </header>
+      
+      <!-- Dark Mode Toggle Button -->
+      <button id="dark-mode-toggle" aria-label="Toggle Dark Mode">
+        <span class="light">&#9728;</span> <!-- Light Mode Icon -->
+        <span class="dark">&#9790;</span> <!-- Dark Mode Icon -->
+      </button>
+
       <section>
         {{ content }}
       </section>
+
       <footer>
         {% if site.github.is_project_page %}
         <p>This project is maintained by <a href="{{ site.github.owner_url }}">{{ site.github.owner_name }}</a></p>
@@ -97,6 +154,33 @@
         <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
       </footer>
     </div>
+
     <script src="{{ "/assets/js/scale.fix.js" | relative_url }}"></script>
+
+    <!-- Dark Mode Toggle Script -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+        const toggleButton = document.getElementById("dark-mode-toggle");
+        const body = document.body;
+
+        // Check if the user has a preferred mode saved in localStorage
+        if (localStorage.getItem("dark-mode") === "true") {
+          body.classList.add("dark-mode");
+        }
+
+        // Add event listener for the toggle button
+        toggleButton.addEventListener("click", function() {
+          body.classList.toggle("dark-mode");
+          
+          // Save the user's preference in localStorage
+          if (body.classList.contains("dark-mode")) {
+            localStorage.setItem("dark-mode", "true");
+          } else {
+            localStorage.setItem("dark-mode", "false");
+          }
+        });
+      });
+    </script>
+
   </body>
 </html>

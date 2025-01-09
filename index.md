@@ -1,12 +1,16 @@
 # Tech Culminating
 
-
 ## Brainstorming
 1. 3-Bit Flashing Binary Adder
 2. Traffic Light
+3. Fortune Teller
 
 ### Idea Chosen
-* 3-Bit Flashing Binary Adder
+* Fortune Teller
 
 ## Plan of Action
-1. Build three 555 timer sequences to allow LED's to flash
+1. Get Github Page working
+    * Find and customize theme
+2. Build three 555 timer sequences to make LED's flash
+3. Connect Raspberry Pi to the breadboard
+4. Build a box for the breadboard using OnShape

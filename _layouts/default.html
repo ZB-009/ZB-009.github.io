@@ -1,4 +1,4 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="{{ site.lang | default: "en-US" }}">
   <head>
     <meta charset="UTF-8">
@@ -95,15 +95,18 @@
             z-index: 1000;
         }
 
+        /* Hide icons by default */
         #dark-mode-toggle span {
             display: none;
         }
 
-        body.dark-mode #dark-mode-toggle span.dark {
+        /* Show light icon in dark mode */
+        body.dark-mode #dark-mode-toggle span.light {
             display: inline;
         }
 
-        body:not(.dark-mode) #dark-mode-toggle span.light {
+        /* Show dark icon in light mode */
+        body:not(.dark-mode) #dark-mode-toggle span.dark {
             display: inline;
         }
 
@@ -139,8 +142,8 @@
       
       <!-- Dark Mode Toggle Button -->
       <button id="dark-mode-toggle" aria-label="Toggle Dark Mode">
-        <span class="light">&#000000;</span> <!-- Light Mode Icon -->
-        <span class="dark">&#FFFFFF;</span> <!-- Dark Mode Icon -->
+        <span class="light">&#9728;</span> <!-- Light Mode Icon (Sun) -->
+        <span class="dark">&#9790;</span> <!-- Dark Mode Icon (Moon) -->
       </button>
 
       <section>

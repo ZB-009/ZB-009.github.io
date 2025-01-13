@@ -12,5 +12,7 @@
 1. Get Github Page working
 2. Find and customize theme
 3. Build three 555 timer sequences to make LED's flash
-4. Connect Raspberry Pi to the breadboard
-5. Build a box for the breadboard using OnShape
+4. Write code for fortune telling on python
+6. Connect Raspberry Pi to the breadboard
+7. Test code for Raspberry Pi
+8. Build a box for the breadboard and Raspberry Pi using OnShape
